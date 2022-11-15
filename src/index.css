@@ -5,12 +5,19 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #282c34;
+  background-image: linear-gradient(to bottom right, rgb(12 74 110), rgb(96 165 250));
+  background-repeat: no-repeat;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.gradient-bg {
+  background-color:hsla(227,69%,63%,1);
+  background-image:
+  radial-gradient(at 52% 25%, hsla(183,0%,100%,1) 0px, transparent 50%),
+  radial-gradient(at 51% 77%, hsla(241,100%,70%,1) 0px, transparent 50%);
 }
 
 
