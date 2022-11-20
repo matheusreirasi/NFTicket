@@ -1,0 +1,10 @@
+{
+    "attributes" : [ {
+      "trait_type" : "Sinistros"
+    }, {
+      "trait_type" : "Piratas"
+    } ],
+    "description" : "Trote de boas vindas aos calouros de 22.2",
+    "image" : "https://gateway.pinata.cloud/ipfs/QmUV7J7Th2H9y1Wycig5HnmzydXzCebJv9ioi6EDVrAJqx",
+    "name" : "Super Trote 22.2"
+}
