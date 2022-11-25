@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="min-h-screen">
       <Banner />
-      <main className="w-full flex items-center justify-start px-12 py-6">
+      <main className="flex items-center mx-28">
         <Welcome />
         <Teams />
       </main>
