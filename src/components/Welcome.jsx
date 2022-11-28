@@ -53,14 +53,14 @@ const Banner = () => {
     }
   
     return (
-      <div className="flex flex-col items-center py-6 px-12">
-        <div className="text-4xl my-4 flex-col items-start">
-          Acompanhe aos jogos <br/>das melhores equipes da UFF.
+      <div className="flex flex-col items-center mx-12">
+        <div className="text-4xl my-4 flex-col items-start text-2">
+          Acompanhe aos jogos das <br/>melhores equipes da UFF.
         </div>
         {true
           ? (
-            <div className="flex flex-col justify-center items-center m-4 px-12 py-2 rounded-full text-2xl bg-blue-800 cursor-pointer">
-              <input className="cursor-pointer" type="button" value="Connect Wallet" onClick={connect}/>
+            <div className="flex flex-col justify-center items-center m-4 px-12 py-2 rounded-full text-2xl  bg-blue-800 cursor-pointer hover:shadow-2xl hover:shadow-zinc-700">
+              <input className="cursor-pointer text-white" type="button" value="Connect Wallet" onClick={connect}/>
             </div>
           )
           : (
