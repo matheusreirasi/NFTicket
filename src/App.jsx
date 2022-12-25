@@ -1,18 +1,16 @@
 import React from "react"
-import {Banner, Welcome, Teams, Footer} from "./components/indexComponents"
-
+import {Banner} from "./components/indexComponents"
+import RoutesApp from "./routes"
 
 function App() {
 
 
   return (
-    <div className="min-h-screen">
+    <div className="gradient-bg min-h-screen">
       <Banner />
       <main className="flex items-center mx-28">
-        <Welcome />
-        <Teams />
+        <RoutesApp />
       </main>
-      <Footer />
     </div>
   )
 }
