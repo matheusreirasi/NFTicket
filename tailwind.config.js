@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'predio': "url('https://csbc.sbc.org.br/2022/wp-content/uploads/2021/06/maxresdefault.jpg')"
+        'predio': "url('https://csbc.sbc.org.br/2022/wp-content/uploads/2021/06/maxresdefault.jpg')",
       }
     },
   },
