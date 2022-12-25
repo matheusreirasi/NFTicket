@@ -1,19 +1,23 @@
 import React from "react"
-import {Banner, Welcome, Teams, Footer} from "../components/indexComponents"
+import {Welcome, Teams, Footer} from "../components/indexComponents"
 
+import { motion } from "framer-motion"
 
 const Home = () => {
-
-
   return (
-    <div className="gradient-bg">
-      <Banner />
-      <main className="flex items-center mx-28">
+    <motion.div
+    initial={{width:"100vw"}}
+    animate={{width:"-100vw"}}
+    exit={{x:"0", transition:{duration:0.2}}}
+    >
+      <main className="flex items-center mx-28 justify-between">
         <Welcome />
         <Teams />
       </main>
-      <Footer />
-    </div>
+      <footer>
+        <Footer />
+      </footer>
+    </motion.div>
   )
 }
 
