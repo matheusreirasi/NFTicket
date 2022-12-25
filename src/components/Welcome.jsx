@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 const {ethereum} = window
 
-const Banner = () => {
+const Welcome = () => {
     const [message, setMessage] = useState()
     const [account, setAccount] = useState()
     const [amount, setAmount] = useState()
@@ -18,7 +18,8 @@ const Banner = () => {
       setMessage("Trying to connect")
       const provider = new ethers.providers.Web3Provider(window.ethereum)
       const accounts = await ethereum.request({method: "eth_requestAccounts"})
-      const balance = await provider.getBalance(accounts[0].toString())
+      const currentAccount = accounts[0]
+      const balance = await provider.getBalance(currentAccount.toString())
   
       if (accounts.length){
         setMessage("")
@@ -28,7 +29,7 @@ const Banner = () => {
         console.log("No accounts found.")
       }
   
-      console.log(accounts[0])
+      console.log(currentAccount)
       console.log(balance)
     }
   
@@ -45,7 +46,7 @@ const Banner = () => {
   
       const transactionValues = await signer.sendTransaction({
         to: address,
-        value: ethers.utils.parseEther("0.1")//aqui funciona da mesma forma que o endereço, o usuário digita quanto irá enviar. Aqui é enviado esse valor somado com a gas fee
+        value: ethers.utils.parseEther("0.01")//aqui funciona da mesma forma que o endereço, o usuário digita quanto irá enviar. Aqui é enviado esse valor somado com a gas fee
       })
   
       setMessage(transactionValues)//a função transactionsValues retorna um objeto, então tenho que passar para string
@@ -55,32 +56,33 @@ const Banner = () => {
     return (
       <div className="flex flex-col items-center mx-12">
         <div className="text-4xl my-4 flex-col items-start text-2">
-          Acompanhe aos jogos das <br/>melhores equipes da UFF.
+          Acompanhe os jogos das <br/>melhores equipes da UFF.
         </div>
-        {true
+        {!account
           ? (
-            <div className="flex flex-col justify-center items-center m-4 px-12 py-2 rounded-full text-2xl  bg-blue-800 cursor-pointer hover:shadow-2xl hover:shadow-zinc-700">
-              <input className="cursor-pointer text-white" type="button" value="Connect Wallet" onClick={connect}/>
+            <div className="flex flex-col justify-center items-center ">
+              <input className="m-4 px-12 py-2 rounded-full text-2xl text-white  bg-blue-700 cursor-pointer hover:bg-blue-800 hover:shadow-2xl hover:shadow-zinc-700" type="button" value="Connect Wallet" onClick={connect}/>
             </div>
           )
           : (
-            <div>
-              <div>
-                <p>
-                  Account:
-                  {account}
+              <div className="flex flex-col m-4 px-2 text-white white-glassmorphism shadow-md shadow-zinc-700">
+                <p className="my-1 font-bold">
+                  Endereço:
+                  <span className="font-medium">
+                    {account}
+                  </span>
                 </p>
-                <p>
-                  Amount:
-                  {amount}
+                <p className="my-1 font-bold">
+                  Saldo:
+                  <span className="font-medium">
+                    {amount}
+                  </span>
                 </p>
-              </div>
-              <input type="button" value="Buy Ticket" onClick={transfer}/>       
-            </div>
+              </div>      
           )
         }
       </div>
     )
   }
 
-export default Banner
+export default Welcome
