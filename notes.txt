@@ -1,0 +1,42 @@
+#### Conexão inicial da carteira com a aplicação ####
+
+    window.ethereum.request({ method: 'eth_requestAccounts' })
+    .then(response => {
+      const accounts = response 
+      console.log(`User's address is ${accounts[0]}`)
+    })
+    .catch(err => setError(err.message))
+
+Esse é outro método de conectar a carteira com a minha aplicação. Eu prefiro usar o provider da Web3provider pois me dá mais opções de comandos.
+
+
+O método utilizado pelo Luiz no vídeo dele (https://www.youtube.com/watch?v=HJhcc16vkZ0&t=1162s) está desatualizado:
+    await window.ethereum.send("eth_requestAccounts")
+
+
+#### Page Transitions ####
+Para a transição funcionar bem eu tive que import Link de react-router-dom e depois substituir isso pela tag HTML <a>
+
+  
+#### Tranferência de valores ####
+    const balance = await provider.getBalance(account.toString())
+
+  * A função acima serve para pegar o valor da conta conectada. A função getBalance() tem que ser passada uma string. A variável balance agora retorna a quantidade de dinheiro que há na carteira, porém retorna no formato 'BigNumber' e não é lido pelo navegador, por isso é necessário utilizar outra sequência de códigos:
+    ethers.utils.formatEther(balance)
+
+  * Antes de realizar a tranferência é importante realizar alguns testes como: verificar se realmente há dinheiro na carteira do usuário, quanto está a gas fee, se a sintáxe da carteira está correta
+
+#### Signer ####
+  Talvez o tópico mais importante sobre Web3. Signer é um objeto que possui a capacidade de assinar contrato, transações e qualquer outro ato praticado na blockchain. O signer possui a chave privada da carteira e faz as assinaturas na blockchain
+
+
+#### Sobre NFT ####
+  * A URL da imagem com o hash já no link fica dentro dos aquivos de metadata do NFT. Depois é feito uma URL igual a da imagem, também contendo o hash na URL, no arquivo do metadata.json. No final a imagem tem uma URL com hash e fica dentro do metadata.json que também terá uma URL com o hash do arquivo.
+
+  * Quando eu criei a função mintNft() na linha 18 do arquivo mint-nft.js não tinha funcionado. Só funcionou quando eu mudei para mintNFT() 
+
+
+
+
+https://goerli.etherscan.io/tx/0x9f68d6929caf55aed7495fcccd9c8751326d7dabc6d22754ab6828282624b10b
+contrato
