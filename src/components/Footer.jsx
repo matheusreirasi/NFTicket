@@ -12,7 +12,7 @@ const ServiceCard = ({color, title, icon}) => {
 
 const Footer = () => {
     return (
-        <div className="flex items-center w-fit h-fit">
+        <div className="flex items-center">
             <div className="flex items-center text-xl ml-12 pr-12 rounded-xl hover:shadow-2xl hover:bg-fuchsia-200 hover:bg-opacity-20 hover:shadow-purple-600">
                 <div className="white-glassmorphism p-3">
                     <div className="bg-[#9B19B8] p-2 rounded-full">
@@ -23,7 +23,7 @@ const Footer = () => {
                     Rápido
                 </h1>
             </div>
-            <div className="flex items-center text-xl ml-12 pr-12 rounded-xl hover:shadow-2xl hover:bg-orange-200 hover:bg-opacity-20 hover:shadow-orange-300">
+            <div className="flex items-center text-xl ml-12 rounded-xl hover:shadow-2xl hover:bg-orange-200 hover:bg-opacity-20 hover:shadow-orange-300">
                 <div className="white-glassmorphism p-3">
                     <div className="bg-[#F34213] p-2 rounded-full">
                         {<AiFillThunderbolt fontSize={29} className="text-white"/>}
@@ -33,11 +33,6 @@ const Footer = () => {
                     Seguro
                 </h1>
             </div>
-            <ServiceCard 
-                color="bg-[#9B19B8]"
-                title="Rápido"
-                icon={BsShieldFillCheck}
-            />
         </div>
     )
 }

@@ -25,15 +25,15 @@ const Purchase = () => {
 
 
   return (
-    <div className='flex flex-col items-center mx-10'>
-        <div className='w-[280px]'>
-            <img src='https://gateway.pinata.cloud/ipfs/QmUV7J7Th2H9y1Wycig5HnmzydXzCebJv9ioi6EDVrAJqx' alt='NFT'/>
-        </div>
-        <div className='mt-4'>
-            <button className='px-14 py-2 bg-blue-700 rounded-full text-white text-xl font-medium cursor-pointer hover:bg-blue-800 hover:shadow-2xl hover:shadow-zinc-700' onClick={buyTIcket}>
-              Buy Ticket
-            </button>
-        </div>
+    <div className='flex flex-col items-center mt-8 mx-12'>
+      <div className='w-[280px]'>
+          <img src='https://gateway.pinata.cloud/ipfs/QmUV7J7Th2H9y1Wycig5HnmzydXzCebJv9ioi6EDVrAJqx' alt='NFT'/>
+      </div>
+      <div className='mt-4'>
+          <button className='px-14 py-2 bg-blue-700 rounded-full text-white text-xl font-medium cursor-pointer hover:bg-blue-800 hover:shadow-2xl hover:shadow-zinc-700' onClick={buyTIcket}>
+            Buy Ticket
+          </button>
+      </div>
     </div>
   )
 }

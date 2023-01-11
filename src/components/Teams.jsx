@@ -5,7 +5,7 @@ import piratas from "../images/piratas.jpg"
 
 const Teams = ()=> {
     return(
-        <div className="flex flex-col mx-12 max-h-fit">
+        <div className="flex flex-col mx-12 justify-around items-center">
             <Link to="/tickets">
                 <div className="flex items-center text-3xl my-5 mx-14 cursor-pointer">
                     <img src={sinistros} alt="img" width={125}className="rounded-full  bg-auto bg-no-repeat bg-center"/>

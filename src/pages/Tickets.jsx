@@ -9,7 +9,7 @@ const Tickets = () => {
       animate={{width:"100vw"}}
       exit={{x:"100vw", transition:{duration:0.2}}}
     >
-      <main className='flex items-center my-8 mx-16'>
+      <main className='flex items-center mx-16'>
         <Teams/>
         <Purchase/>
       </main>
