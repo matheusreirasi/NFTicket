@@ -4,13 +4,14 @@ import RoutesApp from "./routes"
 
 function App() {
 
+  const screenSizeWidth = window.innerWidth
 
   return (
-    <div className="gradient-bg min-h-screen">
+    <div className="gradient-bg min-h-screen w-full">
       <Banner />
-      <main className="flex items-center mx-28 w-screen">
+      <div className={`flex ${screenSizeWidth<560 ? "flex-col" : ""}`}>
         <RoutesApp />
-      </main>
+      </div>
     </div>
   )
 }
