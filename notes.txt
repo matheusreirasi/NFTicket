@@ -14,10 +14,6 @@ O método utilizado pelo Luiz no vídeo dele (https://www.youtube.com/watch?v=HJ
     await window.ethereum.send("eth_requestAccounts")
 
 
-#### Page Transitions ####
-Para a transição funcionar bem eu tive que import Link de react-router-dom e depois substituir isso pela tag HTML <a>
-
-  
 #### Tranferência de valores ####
     const balance = await provider.getBalance(account.toString())
 
@@ -40,3 +36,17 @@ Para a transição funcionar bem eu tive que import Link de react-router-dom e d
 
 https://goerli.etherscan.io/tx/0x9f68d6929caf55aed7495fcccd9c8751326d7dabc6d22754ab6828282624b10b
 contrato
+
+
+
+
+#### Page Transitions ####
+Para a transição funcionar bem eu tive que import Link de react-router-dom e depois substituir isso pela tag HTML <a>
+
+
+#### Sobre display flex ####
+Quando usar display flex é quase obrigação colocar algum valor para justify-content e align-items, e dependendo da orientação dos componentes colocar o eixo do display flex, pois sem isso não ocorre a responsividade e os componentes ficam estáticos em suas posições. Além disso, dependendo dos valores de height e width os componentes não configurados corretamente com o display flex "desaparecem" conforme o tamanho da tela muda.
+
+
+#### Variáveis dentro de className ####
+Atualmente eu tô colocando alguns estilos globalmente dentro das tags e quando necessário eu coloco operadores lógicos dentro do className. Quando eu uso isso os valores que eu passo dentro desses operadores "concatenam" com os valores que eu passo globalmente no className. Por isso que quando eu já tiver colocado flex globalmente no className eu não preciso colocar novamente dentro do operador lógico.
