@@ -54,18 +54,16 @@ const Welcome = () => {
     }
   
     return (
-      <div className="flex flex-col items-center mx-12">
-        <div className="text-4xl my-4 flex-col items-start text-2">
+      <div className="flex flex-col justify-around mx-12">
+        <div className="text-4xl text-2">
           Acompanhe os jogos das <br/>melhores equipes da UFF.
         </div>
         {!account
           ? (
-            <div className="flex flex-col justify-center items-center ">
-              <input className="m-4 px-12 py-2 rounded-full text-2xl text-white  bg-blue-700 cursor-pointer hover:bg-blue-800 hover:shadow-2xl hover:shadow-zinc-700" type="button" value="Connect Wallet" onClick={connect}/>
-            </div>
+            <input className="mx-4 py-2 rounded-full text-2xl text-white bg-blue-700 cursor-pointer hover:bg-blue-800 hover:shadow-2xl hover:shadow-zinc-700" type="button" value="Connect Wallet" onClick={connect}/>
           )
           : (
-              <div className="flex flex-col m-4 px-2 text-white white-glassmorphism shadow-md shadow-zinc-700">
+              <div className="m-4 text-white white-glassmorphism shadow-md shadow-zinc-700">
                 <p className="my-1 font-bold">
                   Endereço:
                   <span className="font-medium">
