@@ -25,7 +25,7 @@ const Purchase = () => {
 
 
   return (
-    <div className='flex flex-col items-center mt-8 mx-12'>
+    <div className='flex flex-col items-center my-8 mx-12'>
       <div className='w-[280px]'>
           <img src='https://gateway.pinata.cloud/ipfs/QmUV7J7Th2H9y1Wycig5HnmzydXzCebJv9ioi6EDVrAJqx' alt='NFT'/>
       </div>
