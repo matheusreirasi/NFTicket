@@ -54,7 +54,7 @@ const Welcome = () => {
     }
   
     return (
-      <div className="flex flex-col justify-around mx-12">
+      <div className="flex flex-col justify-around gap-6 mt-3 mx-12">
         <div className="text-4xl text-2">
           Acompanhe os jogos das <br/>melhores equipes da UFF.
         </div>

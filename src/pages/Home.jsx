@@ -12,11 +12,11 @@ const Home = () => {
     animate={{width:"100vw"}}
     exit={{x:"0", transition:{duration:0.4}}}
     >
-      <main className={`flex justify-around content-center ${screenSizeWidth<770 ? "flex-col content-center" : ""}`}>
+      <main className={`flex justify-around content-center ${screenSizeWidth<770 ? "flex-col justify-center" : ""}`}>
         <Welcome />
         <Teams />
       </main>
-      <footer className={`ml-12 ${screenSizeWidth<770 ? "flex content-center justify-around ml-0" : ""}`}>
+      <footer className={`flex justify-around ${screenSizeWidth<770 ? "justify-center" : ""}`}>
         <Footer />
       </footer>
     </motion.div>
