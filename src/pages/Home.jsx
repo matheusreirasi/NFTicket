@@ -10,7 +10,8 @@ const Home = () => {
     <motion.div
     initial={{width:"100%"}}
     animate={{width:"100vw"}}
-    exit={{x:"0", transition:{duration:0.4}}}
+    exit={{width:'0%', opacity:0}}
+    transition={{width:'100%'}}
     >
       <main className={`flex justify-around content-center ${screenSizeWidth<770 ? "flex-col justify-center" : ""}`}>
         <Welcome />
