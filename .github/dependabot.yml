@@ -10,7 +10,7 @@ updates:
     schedule:
       interval: "daily"
 
-  -package-ecosystem: "nth-check"
+  - package-ecosystem: "nth-check"
     directory: "/"
     schedule:
       interval: "weekly"
