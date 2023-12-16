@@ -1,11 +1,24 @@
-name: Dependabot auto-approve
-on: pull_request_target
+name: Approve Dependabot to Dev
+on: 
+  pull_request:
+    types:
+      - opened
+      - synchronize
 permissions:
   pull-requests: write
 jobs:
-  dependabot:
+  change-to-dev:
     runs-on: ubuntu-latest
-    # Checking the author will prevent your Action run failing on non-Dependabot PRs
+    if: ${{ github.event.pull_request.user.login == 'dependabot[bot]' }}
+    steps:
+      - name: Enter dev branch
+        run: |
+          git config user.name "${{ github.event.sender.login }}"
+          git config user.email "${{ github.event.sender.email }}"
+          git checkout -b dev
+          git push origin dev
+  dependabot-PR:
+    runs-on: ubuntu-latest
     if: ${{ github.event.pull_request.user.login == 'dependabot[bot]' }}
     steps:
       - name: Dependabot metadata

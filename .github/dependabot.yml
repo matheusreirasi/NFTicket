@@ -9,6 +9,9 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "daily"
+    target:
+      branches:
+        - "dev"
 
   - package-ecosystem: "bundler"
     directory: "/"
