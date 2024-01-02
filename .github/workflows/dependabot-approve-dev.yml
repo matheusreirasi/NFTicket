@@ -7,16 +7,17 @@ on:
 permissions:
   pull-requests: write
 jobs:
-  change-to-dev:
+
+  autoapprove:
+    name: Auto Approve a PR by dependabot
     runs-on: ubuntu-latest
-    if: ${{ github.event.pull_request.user.login == 'dependabot[bot]' }}
     steps:
-      - name: Enter dev branch
-        run: |
-          git config user.name "${{ github.event.sender.login }}"
-          git config user.email "${{ github.event.sender.email }}"
-          git checkout -b dev
-          git push origin dev
+      - name: Auto approve
+        uses: hmarr/auto-approve-action@v2.0.0
+        if: github.actor == 'dependabot[bot]' || github.actor == 'dependabot-preview[bot]'
+        with:
+          github-token: ${{ secrets.GITHUB_ACTIONS_TOKEN }}
+
   dependabot-PR:
     runs-on: ubuntu-latest
     if: ${{ github.event.pull_request.user.login == 'dependabot[bot]' }}
